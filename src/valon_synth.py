@@ -137,8 +137,8 @@ class Synthesizer:
         mod = int(epdf / float(chan_spacing) + 0.5)
         if frac != 0 and mod != 0:
             while not (frac & 1) and not (mod & 1):
-                frac /= 2
-                mod /= 2
+                frac //= 2
+                mod //= 2
         else:
             frac = 0
             mod = 1
