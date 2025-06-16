@@ -50,7 +50,8 @@ NACK = 0x15
 
 def _generate_checksum(data):
     "Generate a checksum for the data provided."
-    return chr(sum(data) % 256)
+    cs = sum(data) % 256
+    return bytes([cs])
 
 def _verify_checksum(data, checksum):
     "Verify a checksum for the data provided."
